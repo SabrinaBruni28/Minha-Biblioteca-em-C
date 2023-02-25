@@ -35,12 +35,23 @@ void Insere_String_Arquivo(FILE* arquivo, char* string){
   Retornando a nova string maiuscula.*/
 char* Toupper_Vetor(char* string, int tam){
     int i;
-    char* vetor= (char*)malloc(sizeof(int)*tam);
-    strcpy(vetor, string);
+    char* vetor_maiusculo= (char*)malloc(sizeof(char)*tam);
+    strcpy(vetor_maiusculo, string);
     for(i=0;i<tam;i++){
-        vetor[i] = toupper(string[i]);
+        vetor_maiusculo[i] = toupper(string[i]);
     }
-    return vetor;
+    return vetor_maiusculo;
+}
+/*Funcao que deixa um vetor todo em minusculo.
+  Retornando a nova string minuscula.*/
+char* Tolower_Vetor(char* string, int tam){
+    int i;
+    char* vetor_minusculo= (char*)malloc(sizeof(char)*tam);
+    strcpy(vetor_minusculo, string);
+    for(i=0; i<tam; i++){
+        vetor_minusculo[i] = tolower(string[i]);
+    }
+    return vetor_minusculo;
 }
 /*Funcao que elimina o \n do final das strings e substitui por \0.*/
 void Elinima_Final_Vetor(char*  vetor){

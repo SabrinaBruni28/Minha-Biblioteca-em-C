@@ -36,16 +36,22 @@ int Igual_Inteiro(int a, int b);
 /*Funcao que confere se dois caracteres sao igual.
   Retorna 1 se forem iguais e 0 caso contrario.*/
 int Igual_char(char a, char b);
-/*Funcao que printa uma sequencia de asteriscos.*/
+/*Funcao que printa uma sequencia de asteriscos.
+  Na parte cor voce coloca um dos defines.
+  Esta com BOLD como padrao, mas e possivel retirar escrevendo NADA.*/
 void Asterisco(int n, int cor);
 /*Funcao que escreve uma string no arquivo escolhido.*/
 void Insere_String_Arquivo(FILE* arquivo, char* string);
 /*Funcao que deixa um vetor todo em maiusculo.
   Retornando a nova string maiuscula.*/
 char* Toupper_Vetor(char* string, int tam);
+/*Funcao que deixa um vetor todo em minusculo.
+  Retornando a nova string minuscula.*/
+char* Tolower_Vetor(char* string, int tam);
 /*Funcao que elimina o \n do final das strings e substitui por \0.*/
 void Elinima_Final_Vetor(char*  vetor);
-/*Funcao que printa cada linha de um arquivo.*/
+/*Funcao que printa cada linha de um arquivo.
+  O tamanho se refere a string.*/
 void Imprime_Arquivo(FILE* arquivo, int tamanho);
 /*Funcao que printa uma matriz de caracteres.*/
 void Print_Matriz_Char(int linhas, int colunas, char matriz[linhas][colunas]);
@@ -55,7 +61,8 @@ void Print_Matriz_Int(int linhas, int colunas, int matriz[linhas][colunas]);
 void Print_Matriz_String(int linhas, int colunas, char matriz[linhas][colunas]);
 /*Funcao que printa o titulo desejado.*/
 void Titulo(char* titulo, int cor);
-/*Funcao que zera a string, para nao ocorrer erro na hora de sobrepor.*/
+/*Funcao que zera a string, para nao ocorrer erro na hora de sobrepor.
+  O n e o tamanho do vetor.*/
 void Zera_Palavra(char* string, int n);
 /*Funcao que confere se uma string e igual a outra.
   Retorna 1 caso seja igual e 0 caso contrario.*/
