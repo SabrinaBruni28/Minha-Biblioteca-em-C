@@ -32,7 +32,10 @@
 int Numero_Aleatorio(int topo);
 /*Funcao que confere se dois numeros sao igual.
   Retorna 1 se forem iguais e 0 caso contrario.*/
-int Igual(int a, int b);
+int Igual_Inteiro(int a, int b);
+/*Funcao que confere se dois caracteres sao igual.
+  Retorna 1 se forem iguais e 0 caso contrario.*/
+int Igual_char(char a, char b);
 /*Funcao que printa uma sequencia de asteriscos.*/
 void Asterisco(int n, int cor);
 /*Funcao que escreve uma string no arquivo escolhido.*/

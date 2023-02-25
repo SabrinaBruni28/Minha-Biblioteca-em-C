@@ -9,7 +9,13 @@ int Numero_Aleatorio(int topo){
 }
 /*Funcao que confere se dois numeros sao igual.
   Retorna 1 se forem iguais e 0 caso contrario.*/
-int Igual(int a, int b){
+int Igual_Inteiro(int a, int b){
+    if(a == b) return 1;
+    return 0;
+}
+/*Funcao que confere se dois caracteres sao igual.
+  Retorna 1 se forem iguais e 0 caso contrario.*/
+int Igual_char(char a, char b){
     if(a == b) return 1;
     return 0;
 }
