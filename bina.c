@@ -54,7 +54,7 @@ char* Tolower_Vetor(char* string, int tam){
     return vetor_minusculo;
 }
 /*Funcao que elimina o \n do final das strings e substitui por \0.*/
-void Elinima_Final_Vetor(char*  vetor){
+void Elinima_Final_String(char*  vetor){
     int i;
     for(i=0; vetor[i]; i++) 
         if(vetor[i]=='\n'){ 
@@ -107,7 +107,7 @@ void Titulo(char* titulo, int cor){
 }
 
 /*Funcao que zera a string, para nao ocorrer erro na hora de sobrepor.*/
-void Zera_Palavra(char* string, int n){
+void Zera_String(char* string, int n){
     int i;
     for(i=0; i<n; i++)
         string[i] = '\0';

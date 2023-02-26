@@ -49,7 +49,7 @@ char* Toupper_Vetor(char* string, int tam);
   Retornando a nova string minuscula.*/
 char* Tolower_Vetor(char* string, int tam);
 /*Funcao que elimina o \n do final das strings e substitui por \0.*/
-void Elinima_Final_Vetor(char*  vetor);
+void Elinima_Final_String(char*  vetor);
 /*Funcao que printa cada linha de um arquivo.
   O tamanho se refere a string.*/
 void Imprime_Arquivo(FILE* arquivo, int tamanho);
@@ -63,7 +63,7 @@ void Print_Matriz_String(int linhas, int colunas, char matriz[linhas][colunas]);
 void Titulo(char* titulo, int cor);
 /*Funcao que zera a string, para nao ocorrer erro na hora de sobrepor.
   O n e o tamanho do vetor.*/
-void Zera_Palavra(char* string, int n);
+void Zera_String(char* string, int n);
 /*Funcao que confere se uma string e igual a outra.
   Retorna 1 caso seja igual e 0 caso contrario.*/
 int String_Igual(char* string1, char* string2);
