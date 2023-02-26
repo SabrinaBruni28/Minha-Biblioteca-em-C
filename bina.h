@@ -73,3 +73,51 @@ int Inicializa_Arquivo(FILE* arquivo, char* texto);
 /*Funcao que confere se uma determinada letra existe em uma string.
   Retorna a quantidade de vezes que a letra aparece na string.*/
 int Existe_Letra(char* string, char letra);
+
+
+/*Funcao de ordenacao de vetor de inteiros Bolha.*/
+void Bolha_Int (int* v, int n );
+/*Funcao de ordenacao de vetor de inteiros Bolha Melhorado*/
+void BolhaMelhorado_Int (int* v, int n );
+/*Funcao de ordenacao de vetor de inteiros Insercao.*/
+void Insercao_Int (int* v, int n );
+/*Funcao de ordenacao de vetor de inteiros Selecao.*/
+void Selecao_Int (int* v, int n);
+/*Funcao de ordenacao de vetor de inteiros Shell.*/
+void Shellsort_Int (int* A, int n);
+/*Funcao que controi o heap.*/
+void Constroi_Int(int *A, int *n);
+/*Funcao que refaz o head.*/
+void Refaz_Int(int Esq, int Dir, int *A);
+/*Funcao de ordenacao de vetor de inteiros Heap.*/
+void Heapsort_Int(int *A, int *n);
+/*Funcao que faz a particao do quick.*/
+void Particao_Int(int Esq, int Dir, int *i, int *j, int *A);
+/*Funcao que ordena o quick.*/
+void Ordena_Int(int Esq, int Dir, int *A);
+/*Funcao de ordenacao de vetor de inteiros Quick.*/
+void QuickSort_Int(int *A, int n);
+
+
+/*Funcao de ordenacao de vetor de caracteres Bolha.*/
+void Bolha_Char (char* v, int n );
+/*Funcao de ordenacao de vetor de caracteres Bolha Melhorado*/
+void BolhaMelhorado_Char (char* v, int n );
+/*Funcao de ordenacao de vetor de caracteres Insercao.*/
+void Insercao_Char (char* v, int n );
+/*Funcao de ordenacao de vetor de caracteres Selecao.*/
+void Selecao_Char (char* v, int n);
+/*Funcao de ordenacao de vetor de caracteres Shell.*/
+void Shellsort_Char (char* A, int n);
+/*Funcao que controi o heap.*/
+void Constroi_Char(char *A, int *n);
+/*Funcao que refaz o head.*/
+void Refaz_Char(int Esq, int Dir, char *A);
+/*Funcao de ordenacao de vetor de caracteres Heap.*/
+void Heapsort_Char(char *A, int *n);
+/*Funcao que faz a particao do quick.*/
+void Particao_Char(int Esq, int Dir, int *i, int *j, char *A);
+/*Funcao que ordena o quick.*/
+void Ordena_Char(int Esq, int Dir, char *A);
+/*Funcao de ordenacao de vetor de caracteres Quick.*/
+void QuickSort_Char(char *A, int n);

@@ -143,3 +143,303 @@ int Existe_Letra(char* string, char letra){
     }
     return cont;
 }
+
+/*   Funcoes de Ordenar Vetores de Inteiros   */
+/*Funcao de ordenacao de vetor de inteiros Bolha.*/
+void Bolha_Int (int* v, int n ){
+    int i, j;
+    int aux;
+    for( i = 0 ; i < n-1 ; i++ ){
+        for( j = 1 ; j < n-i ; j++ )
+            if ( v[j] < v[j-1] ){
+                aux = v[j];
+                v[j] = v[j-1];
+                v[j-1] = aux;
+            }
+    }
+}
+/*Funcao de ordenacao de vetor de inteiros Bolha Melhorado*/
+void BolhaMelhorado_Int (int* v, int n ){
+    int i, j, troca;
+    int aux;
+    for( i = 0 ; i < n-1 ; i++ ){
+        troca = 0;
+        for( j = 1 ; j < n-i ; j++ ){
+            if ( v[j] < v[j-1] ){
+                aux = v[j];
+                v[j] = v[j-1];
+                v[j-1] = aux;
+                troca = 1;
+            } 
+        }
+    if (troca == 0)
+        break;
+    }
+}
+/*Funcao de ordenacao de vetor de inteiros Insercao.*/
+void Insercao_Int (int* v, int n ){
+    int i,j;
+    int aux;
+    for (i = 1; i < n; i++){
+        aux = v[i];
+        j = i - 1;
+        while ( ( j >= 0 ) && ( aux < v[j] ) ){
+            v[j + 1] = v[j];
+            j--;
+        }
+        v[j + 1] = aux;
+    }
+}
+/*Funcao de ordenacao de vetor de inteiros Selecao.*/
+void Selecao_Int (int* v, int n){
+    int i, j, Min;
+    int aux;
+    for (i = 0; i < n - 1; i++){
+        Min = i;
+        for (j = i + 1 ; j < n; j++)
+            if ( v[j] < v[Min])
+                Min = j;
+            aux = v[Min];
+            v[Min] = v[i];
+            v[i] = aux;
+    }
+}
+/*Funcao de ordenacao de vetor de inteiros Shell.*/
+void Shellsort_Int (int* A, int n){
+    int i, j;
+    int h = 1;
+    int aux;
+    do h = h * 3 + 1; while (h < n);
+    do{
+        h = h/3;
+        for( i = h ; i < n ; i++ ){
+            aux = A[i]; j = i;
+            while (A[j - h] > aux){
+                A[j] = A[j - h]; j -= h;
+                if (j < h) 
+                    break;
+            }
+            A[j] = aux;
+        }
+    } while (h != 1);
+}
+/*Funcao que controi o heap.*/
+void Constroi_Int(int *A, int *n){
+    int Esq;
+    Esq = *n / 2 + 1;
+    while (Esq > 1){
+        Esq--;
+        Refaz_Int(Esq, *n, A);
+    }
+}
+/*Funcao que refaz o head.*/
+void Refaz_Int(int Esq, int Dir, int *A){
+    int j = Esq * 2;
+    int aux = A[Esq];
+    while (j <= Dir){
+        if ((j < Dir)&&(A[j] < A[j+1])) 
+            j++;
+        if (aux >= A[j]) 
+            break;
+        A[Esq] = A[j];
+        Esq = j; j = Esq * 2;
+    }
+    A[Esq] = aux;
+}
+/*Funcao de ordenacao de vetor de inteiros Heap.*/
+void Heapsort_Int(int *A, int *n){
+    int Esq, Dir;
+    int aux;
+    Constroi_Int(A, n); /* constroi o heap */
+    Esq = 1; 
+    Dir = *n;
+    while (Dir > 1){ /* ordena o vetor */
+        aux = A[1]; 
+        A[1] = A[Dir]; 
+        A[Dir] = aux;
+        Dir--;
+        Refaz_Int(Esq, Dir, A);
+    }
+}
+/*Funcao que faz a particao do quick.*/
+void Particao_Int(int Esq, int Dir, int *i, int *j, int *A){
+    int pivo, aux;
+    *i = Esq; *j = Dir;
+    pivo = A[(*i + *j)/2]; /* obtem o pivo x */
+    do{
+        while (pivo > A[*i]) 
+            (*i)++;
+        while (pivo < A[*j]) 
+            (*j)--;
+        if (*i <= *j){
+            aux = A[*i]; 
+            A[*i] = A[*j]; 
+            A[*j] = aux;
+            (*i)++; 
+            (*j)--;
+        }
+    } while (*i <= *j);
+}
+/*Funcao que ordena o quick.*/
+void Ordena_Int(int Esq, int Dir, int *A){
+    int i,j;
+    Particao_Int(Esq, Dir, &i, &j, A);
+    if (Esq < j) 
+        Ordena_Int(Esq, j, A);
+    if (i < Dir) 
+        Ordena_Int(i, Dir, A);
+}
+/*Funcao de ordenacao de vetor de inteiros Quick.*/
+void QuickSort_Int(int *A, int n){
+    Ordena_Int(0, n-1, A);
+}
+
+/*   Funcoes de Ordenar Vetores de caracteres   */
+/*Funcao de ordenacao de vetor de caracteres Bolha.*/
+void Bolha_Char (char* v, int n ){
+    int i, j;
+    char aux;
+    for( i = 0 ; i < n-1 ; i++ ){
+        for( j = 1 ; j < n-i ; j++ )
+            if ( v[j] < v[j-1] ){
+                aux = v[j];
+                v[j] = v[j-1];
+                v[j-1] = aux;
+            }
+    }
+}
+/*Funcao de ordenacao de vetor de caracteres Bolha Melhorado*/
+void BolhaMelhorado_Char (char* v, int n ){
+    int i, j, troca;
+    char aux;
+    for( i = 0 ; i < n-1 ; i++ ){
+        troca = 0;
+        for( j = 1 ; j < n-i ; j++ ){
+            if ( v[j] < v[j-1] ){
+                aux = v[j];
+                v[j] = v[j-1];
+                v[j-1] = aux;
+                troca = 1;
+            } 
+        }
+    if (troca == 0)
+        break;
+    }
+}
+/*Funcao de ordenacao de vetor de caracteres Insercao.*/
+void Insercao_Char (char* v, int n ){
+    int i,j;
+    char aux;
+    for (i = 1; i < n; i++){
+        aux = v[i];
+        j = i - 1;
+        while ( ( j >= 0 ) && ( aux < v[j] ) ){
+            v[j + 1] = v[j];
+            j--;
+        }
+        v[j + 1] = aux;
+    }
+}
+/*Funcao de ordenacao de vetor de caracteres Selecao.*/
+void Selecao_Char (char* v, int n){
+    int i, j, Min;
+    char aux;
+    for (i = 0; i < n - 1; i++){
+        Min = i;
+        for (j = i + 1 ; j < n; j++)
+            if ( v[j] < v[Min])
+                Min = j;
+            aux = v[Min];
+            v[Min] = v[i];
+            v[i] = aux;
+    }
+}
+/*Funcao de ordenacao de vetor de caracteres Shell.*/
+void Shellsort_Char (char* A, int n){
+    int i, j;
+    int h = 1;
+    char aux;
+    do h = h * 3 + 1; while (h < n);
+    do{
+        h = h/3;
+        for( i = h ; i < n ; i++ ){
+            aux = A[i]; j = i;
+            while (A[j - h] > aux){
+                A[j] = A[j - h]; j -= h;
+                if (j < h) 
+                    break;
+            }
+            A[j] = aux;
+        }
+    } while (h != 1);
+}
+/*Funcao que controi o heap.*/
+void Constroi_Char(char *A, int *n){
+    int Esq;
+    Esq = *n / 2 + 1;
+    while (Esq > 1){
+        Esq--;
+        Refaz_Char(Esq, *n, A);
+    }
+}
+/*Funcao que refaz o head.*/
+void Refaz_Char(int Esq, int Dir, char *A){
+    int j = Esq * 2;
+    char aux = A[Esq];
+    while (j <= Dir){
+        if ((j < Dir)&&(A[j] < A[j+1])) 
+            j++;
+        if (aux >= A[j]) 
+            break;
+        A[Esq] = A[j];
+        Esq = j; j = Esq * 2;
+    }
+    A[Esq] = aux;
+}
+/*Funcao de ordenacao de vetor de caracteres Heap.*/
+void Heapsort_Char(char *A, int *n){ 
+    int Esq, Dir;
+    char aux;
+    Constroi_Char(A, n); /* constroi o heap */
+    Esq = 1; 
+    Dir = *n;
+    while (Dir > 1){ /* ordena o vetor */
+        aux = A[1]; 
+        A[1] = A[Dir]; 
+        A[Dir] = aux;
+        Dir--;
+        Refaz_Char(Esq, Dir, A);
+    }
+}
+/*Funcao que faz a particao do quick.*/
+void Particao_Char(int Esq, int Dir, int *i, int *j, char *A){
+    char pivo, aux;
+    *i = Esq; *j = Dir;
+    pivo = A[(*i + *j)/2]; /* obtem o pivo x */
+    do{
+        while (pivo > A[*i]) 
+            (*i)++;
+        while (pivo < A[*j]) 
+            (*j)--;
+        if (*i <= *j){
+            aux = A[*i]; 
+            A[*i] = A[*j]; 
+            A[*j] = aux;
+            (*i)++; 
+            (*j)--;
+        }
+    } while (*i <= *j);
+}
+/*Funcao que ordena o quick.*/
+void Ordena_Char(int Esq, int Dir, char *A){
+    int i,j;
+    Particao_Char(Esq, Dir, &i, &j, A);
+    if (Esq < j) 
+        Ordena_Char(Esq, j, A);
+    if (i < Dir) 
+        Ordena_Char(i, Dir, A);
+}
+/*Funcao de ordenacao de vetor de caracteres Quick.*/
+void QuickSort_Char(char *A, int n){
+    Ordena_Char(0, n-1, A);
+}
